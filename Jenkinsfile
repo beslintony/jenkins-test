@@ -12,8 +12,15 @@ pipeline {
     environment {
         APP_DIR = 'scripts'
     }
-
     stages {
+        stage('Permissions Fix') {
+            steps {
+                echo "=== Fixing script permissions ==="
+                dir("${APP_DIR}") {
+                    sh 'chmod +x *.sh'
+                }
+            }
+        }
         stage('Run') {
             steps {
                 echo "=== Run Stage ==="
