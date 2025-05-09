@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'docker-agent-alphine'  // Can be any label with shell support
+            label 'jenkins-agent'  // Can be any label with shell support
         }
     }
 
